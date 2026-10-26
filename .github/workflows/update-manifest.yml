@@ -1,0 +1,50 @@
+name: Update plugin manifest
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Generate manifest
+        env:
+          SRC: https://www.iamparadox.dev/jellyfin/plugins/manifest.json
+          OLD: 12.2.0.0
+          NEW: 12.3.0.0
+        run: |
+          set -euo pipefail
+
+          curl -fsSL "$SRC" \
+            | jq --arg old "$OLD" --arg new "$NEW" '
+                map(.versions |= map(
+                  if .targetAbi == $old then .targetAbi = $new else . end
+                ))' > manifest.json
+
+          echo "Einträge mit targetAbi $NEW:"
+          jq -r --arg new "$NEW" '
+            .[] | .name as $name
+            | .versions[] | select(.targetAbi == $new)
+            | "  \($name) \(.version)"' manifest.json
+
+          remaining="$(jq --arg old "$OLD" '[.[] | .versions[] | select(.targetAbi == $old)] | length' manifest.json)"
+          echo "Verbleibende Einträge mit $OLD: $remaining"
+          test "$remaining" -eq 0
+
+      - name: Commit manifest changes
+        run: |
+          if ! git diff --quiet -- manifest.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add manifest.json
+            git commit -m 'chore: update plugin manifest'
+            git push
+          fi
