@@ -2,7 +2,7 @@
   {
     "guid": "074fa1cc-5c7a-4203-bf96-1a33d36b7de7",
     "name": "Home Screen Sections (Experimental)",
-    "overview": null,
+    "overview": "Adds support for server provided home screen sections\n\nNote: This is an experimental build and cannot be used in conjunction with the stable release of Home Screen Sections. Please only install one of them.",
     "description": "Adds support for server provided home screen sections\n\nNote: This is an experimental build and cannot be used in conjunction with the stable release of Home Screen Sections. Please only install one of them.",
     "owner": "IAmParadox27",
     "category": "Experimental",
@@ -200,12 +200,78 @@
   {
     "guid": "fbacd0b6-fd46-4a05-b0a4-2045d6a135b0",
     "name": "Custom Tabs",
-    "overview": null,
+    "overview": "Adds support for custom tabs to be added to the Jellyfin webpage. Commonly used to add Requests tab.",
     "description": "Adds support for custom tabs to be added to the Jellyfin webpage. Commonly used to add Requests tab.",
     "owner": "IAmParadox27",
     "category": "General",
     "imageUrl": "https://raw.githubusercontent.com/IAmParadox27/jellyfin-plugin-custom-tabs/main/src/logo.png",
     "versions": [
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "10.11.11.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-10.11.11.zip",
+        "checksum": "50AE3B579B5EB343ACF5655D886E8AA1",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-12.0.0.zip",
+        "checksum": "3DC02A559F24710B905E4CDE830D1A9E",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "12.1.0.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-12.1.0.zip",
+        "checksum": "12BDC55137569354D64ABD2A2E7FE785",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "12.3.0.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-12.2.0.zip",
+        "checksum": "5BDB7BD8BD82CA79925320A0980B2C16",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "12.3.0.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-12.3.0.zip",
+        "checksum": "4259451C5B2C879C0CC2CF798B722C3F",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
+      {
+        "version": "0.3.3.0",
+        "changelog": "Added support for 12.3 and 12.4\r\nFixed issue with tabs appearing to logged out (guest) users (PR #73, @S2ciOnur)",
+        "targetAbi": "12.4.0.0",
+        "sourceUrl": "https://github.com/IAmParadox27/jellyfin-plugin-custom-tabs/releases/download/0.3.3.0/Release-12.4.0.zip",
+        "checksum": "49CA7DEB6BBFB0CD7F200EE7D3F637D9",
+        "timestamp": "2026-10-30T10:13:16",
+        "dependencies": [
+          "5e87cc92-571a-4d8d-8d98-d2d4147f9f90"
+        ]
+      },
       {
         "version": "0.3.2.0",
         "changelog": "Added support for 12.2",
@@ -992,7 +1058,7 @@
   {
     "guid": "043b2c48-b3e0-4610-b398-8217b146d1a4",
     "name": "Collection Sections",
-    "overview": null,
+    "overview": "Adds home screen section for collections/playlists",
     "description": "Adds home screen section for collections/playlists",
     "owner": "IAmParadox27",
     "category": "General",
@@ -1641,7 +1707,7 @@
   {
     "guid": "5e87cc92-571a-4d8d-8d98-d2d4147f9f90",
     "name": "File Transformation",
-    "overview": null,
+    "overview": "Adds support for plugins to change jellyfin-web content without actually modifying the files directly but intercepts the requests for the served data.",
     "description": "Adds support for plugins to change jellyfin-web content without actually modifying the files directly but intercepts the requests for the served data.",
     "owner": "IAmParadox27",
     "category": "General",
@@ -2895,7 +2961,7 @@
   {
     "guid": "08f615ea-2107-4f04-89cc-091035f54448",
     "name": "Media Bar",
-    "overview": null,
+    "overview": "Adds a media bar element at the top of the homepage on Jellyfin web",
     "description": "Adds a media bar element at the top of the homepage on Jellyfin web",
     "owner": "IAmParadox27 & M0RPH3US",
     "category": "General",
@@ -3940,7 +4006,7 @@
   {
     "guid": "5b6550fa-a014-4f4c-8a2c-59a43680ac6d",
     "name": "Plugin Pages",
-    "overview": null,
+    "overview": "Adds support for plugins to define their own user settings pages, rather than just admin sided.",
     "description": "Adds support for plugins to define their own user settings pages, rather than just admin sided.",
     "owner": "IAmParadox27",
     "category": "General",
@@ -4831,7 +4897,7 @@
   {
     "guid": "b8298e01-2697-407a-b44d-aa8dc795e850",
     "name": "Home Screen Sections",
-    "overview": null,
+    "overview": "Adds support for server provided home screen sections",
     "description": "Adds support for server provided home screen sections",
     "owner": "IAmParadox27",
     "category": "General",
